@@ -423,7 +423,6 @@ INSERT INTO PaymentMethod (paymentName, descriptionPayment) VALUES
 ('Credit Card', 'Pay with your credit card'),
 ('PayPal', 'Secure online payments'),
 ('Cash on Delivery', 'Pay when you receive the product');
-
 -- Thêm dữ liệu vào bảng Order
 INSERT INTO `Order` (customerId, orderDate, totalAmount, oderStatus) VALUES
 (4, NOW(), 0, 'ADDED_TO_CARD'),
