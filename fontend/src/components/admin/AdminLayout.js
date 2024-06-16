@@ -11,7 +11,8 @@ import {
     BuildOutlined,
     PlusOutlined,
     BarsOutlined,
-    FileTextOutlined 
+    FileTextOutlined, 
+    PercentageOutlined
 } from '@ant-design/icons';
 import { Routes, Route, Link, useLocation, useNavigate } from 'react-router-dom';
 
@@ -27,6 +28,9 @@ import UpdateProduct from './Product-Manager/UpdateProduct';
 import UpdateProductDetail from './ProductDetailManager/UpdateProductDetailById';
 import MangerOrder from './Order/ManagerOrder';
 import CheckOrder from './Order/CheckOrder';
+import AddSales from './Sales-Manager/AddSales';
+import SalesManager from './Sales-Manager/SalesManager';
+import UpdateSales from './Sales-Manager/UpdateSales';
 
 const { Sider, Content } = Layout;
 
@@ -96,6 +100,14 @@ function AdminLayout() {
                                     <Link to="products-detail">Chi tiết sản phẩm</Link>
                                 </Menu.Item>
                             </Menu.SubMenu>
+                            <Menu.SubMenu key="sale" icon={<PercentageOutlined />} title="Khuyến mãi">
+                                <Menu.Item key="sales/create" icon={<PlusOutlined />}>
+                                    <Link to="sales/create">Thêm khuyến mãi</Link>
+                                </Menu.Item>
+                                <Menu.Item key="sales" icon={<BarsOutlined />}>
+                                    <Link to="sales">Quản lý khuyến mãi</Link>
+                                </Menu.Item>
+                            </Menu.SubMenu>
                             <Menu.Item key="settings" icon={<SettingOutlined />}>
                                 <Link to="settings">Settings</Link>
                             </Menu.Item>
@@ -118,7 +130,9 @@ function AdminLayout() {
                                 <Route path="/productdetails/update/:id" element={<UpdateProductDetail />} />
                                 <Route path="/orders" element={<MangerOrder/>}></Route>
                                 <Route path="/orders/checkOrder/:id" element={<CheckOrder/>}></Route>
-                               
+                                <Route path="/sales/create" element={<AddSales/>}></Route>
+                                <Route path="/sales/" element={<SalesManager/>}></Route>
+                                <Route path="/sales/update" element={<UpdateSales/>}></Route>
                             </Routes>
                         </Content>
                     </Layout>
